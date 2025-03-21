@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+// Function to perform basic arithmetic operations
+double calculate(double num1, double num2, char op) {
+    switch (op) {
+        case '+': // Addition
+            return num1 + num2;
+        case '-': // Subtraction
+            return num1 - num2;
+        case '*': // Multiplication
+            return num1 * num2;
+        case '/': // Division with zero-checking
+            if (num2 != 0) {
+                return num1 / num2;
+            } else {
+                throw runtime_error("Error: Division by zero is not allowed."); // Exception for division by zero
+            }
+        default:
+            throw invalid_argument("Error: Invalid operator."); // Exception for invalid operators
+    }
+}
+
+int main() {
+    double num1, num2; // Variables to store user input
+    char op; // Variable to store the operator
+
+    // Prompt the user for input
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> op;
+
+    try {
+        double result = calculate(num1, num2, op); // Call the calculate function
+        cout << "The result is: " << result << endl; // Display the result
+    } catch (const exception& e) {
+        cout << e.what() << endl; // Handle and display exceptions
+    }
+
+    return 0; // Indicate successful program execution
+}
