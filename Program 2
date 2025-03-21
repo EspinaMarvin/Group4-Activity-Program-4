@@ -21,15 +21,18 @@ bool isLeapYear(int year) {
 }
 
 int main() {
- int year;
- cout << "Enter a year: ";
- cin >> year;
+    int year; // Variable to store user input
 
- if (isLeapYear(year)) {
- cout << year << " is a leap year." << endl;
- } else {
- cout << year << " is not a leap year." << endl;
- }
+    // Prompt the user to enter a year
+    cout << "Enter a year: ";
+    cin >> year;
 
- return 0;
+    // Check if the year is a leap year and display the result
+    if (isLeapYear(year)) {
+        cout << year << " is a leap year." << endl;
+    } else {
+        cout << year << " is not a leap year." << endl;
+    }
+
+    return 0; // Indicate successful program execution
 }
