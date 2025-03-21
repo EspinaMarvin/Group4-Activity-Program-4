@@ -1,1 +1,29 @@
+#include <iostream>
+using namespace std;
 
+int main()
+
+{
+	int NumGrades=0;
+	double grades=0.00;
+	double total=0.00,GradeAv=0.00;
+
+	for (NumGrades = 0;; NumGrades++) // Infinite loop until -1 is entered
+	{
+		cout << "\tEnter the Grade for Quarter " << (NumGrades+1) 
+		<< ".  (Press -1 To Stop ) : ";
+		cin >> grades;
+
+		total += grades; // Adds the inputted grade to the total sum
+
+		
+		if (grades == -1) { // Checks if the user wants to stop
+			GradeAv = ((total / NumGrades)); // Calculates the average
+			cout << "\n\n\tThe average of Grade is: " << 
+		     GradeAv<< ".";		
+			break; // Exits the loop
+		}
+		
+     }
+     return 0;  // Indicates successful program execution
+}
